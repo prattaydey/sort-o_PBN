@@ -16,7 +16,7 @@
 ### SelectionSort
 #### Best Case: None
 #### Worst Case: None
-- There is no best/worst case because selection sort only swaps once per pass, and there's always n-1 passes. This is because we are individually moving each element to its correct position, regardless of its initial position.
+- There is no best/worst case because selection sort only swaps once per pass, and there's always **n-1** passes. This is because we are individually moving each element to its correct position, regardless of its initial position.
 - Runtime complexity: n
 
 ### InsertionSort
