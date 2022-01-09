@@ -3,3 +3,43 @@
 // Lab04 -- Sort Algorithms
 // 2022-01-06
 // time spent: 0.6 hrs
+
+DISCO 
+- You can utilize counters to check for swaps, comparisons, and total passes.
+
+QCC
+- How can we further optimize our sorting algorithms?
+
+BUB-QA
+ * q0: If a pass requires no swaps, what do you know?
+ * a0: The dataset is sorted.
+ * q1: After pass p, what do you know?
+ * a1: The value before index p are in its correct sorted position.
+ * q2: How many passes are necessary to completely sort?
+ * a2: One less than the total number of elements in the dataset allows for
+ *     a complete sort.
+
+SEL-QA
+ * q0: How many passes to sort n elements?
+ * a0: n-1 passes are needed to sort n elements.
+ * q1: What do you know after pass p?
+ * a1: The first p elements from the right are sorted.
+ * q2: How do you know if sorted?
+ * a2: n-1 passes has been reached.
+ * q3: What does a pass boil down to?
+ * a3: A pass boils down to searching for the index possessing the highest value
+ *     and swapping that with the next available index from the right.
+ 
+INS-QA
+ * q0: How many passes to sort n elements?
+ * a0: n-1 passes are needed to sort n elements.
+ * q1: What do you know after pass p?
+ * a1: The first p+1 elements are sorted relative to each other.
+ *     (assuming that the first element by itself does not count as a pass)
+ * q2: How will you know when sorted?
+ * a2: There are no elements to the right of the partition.
+ * q3: What constitutes a pass?
+ * a3: The shift of the partition one element right and the sorting of all
+ *     elements to the left of that partition.
+ * q4: What must you track?
+ * a4: The position of the partition.
