@@ -6,7 +6,7 @@
 
 ### Bubble Sort: 
 #### Best Case: Ascending Order
-- When a list with **n** elements is already sorted in ascending order, there are **n-1** passes with no swaps.
+- When a list with **n** elements is already sorted in ascending order, there are **n-1** passes with no swaps, since it is already sorted.
 - Runtime complexity: 1
 
 #### Worst Case: Descending Order
@@ -21,7 +21,7 @@
 
 ### Insertion Sort:
 #### Best Case: Ascending Order
-- When a list with **n** elements is already sorted in ascending order, there are **n-1** passes with no swaps.
+- When a list with **n** elements is already sorted in ascending order, there are **n-1** passes with no swaps, since it is already sorted.
 - Runtime complexity: 1
 #### Worst Case: Descending Order
 - When the list is in descending order (opposite of what we want), then we have to make **n-1** passes with **(n<sup>2</sup> - n)/2** swaps. Each comparison results in a swap.
