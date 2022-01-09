@@ -35,17 +35,99 @@ public class Driver
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   public static void main( String[] args ){
-    // Bubble Sort
-      // General case
-    ArrayList nafiz = new ArrayList<Integer>();
-    nafiz.add(7);
-    nafiz.add(1);
-    nafiz.add(5);
-    nafiz.add(12);
-    nafiz.add(3);
-    Sorts.bubble(nafiz);
+    System.out.println("Testing Bubble Sort:");
 
+    ArrayList nafiz_avg = new ArrayList<Integer>();
+    nafiz_avg = populate(20, 1, 100);
+    System.out.println("Average case (" + nafiz_avg.size() + " elements): ");
+    System.out.println(nafiz_avg);
+    Sorts.bubble(nafiz_avg);
+    System.out.println("Sorted nafiz_avg:");
+    System.out.println(nafiz_avg);
 
+    System.out.println(); //===============================
+
+    ArrayList nafiz_best = new ArrayList<Integer>();
+    for (int i = 0; i < 20; i++){ nafiz_best.add(i * 2); }
+    System.out.println("Best case (" + nafiz_best.size() + " elements): ");
+    System.out.println(nafiz_best);
+    Sorts.bubble(nafiz_best);
+    System.out.println("Sorted nafiz_best:");
+    System.out.println(nafiz_best);
+
+    System.out.println(); //===============================
+
+    ArrayList nafiz_worst = new ArrayList();
+    for (int i = 20; i > 0; i--){ nafiz_worst.add(i * 2); }
+    System.out.println("Worst case (" + nafiz_worst.size() + " elements): ");
+    System.out.println(nafiz_worst);
+    Sorts.bubble(nafiz_worst);
+    System.out.println("Sorted nafiz_worst:");
+    System.out.println(nafiz_worst);
+
+    System.out.println(); //===============================
+
+    System.out.println("Testing Selection Sort:");
+
+    ArrayList prattay_avg = new ArrayList<Integer>();
+    prattay_avg = populate(20, 1, 100);
+    System.out.println("Average case (" + prattay_avg.size() + " elements): ");
+    System.out.println(prattay_avg);
+    Sorts.selection(prattay_avg);
+    System.out.println("Sorted prattay_avg:");
+    System.out.println(prattay_avg);
+
+    System.out.println(); //===============================
+
+    ArrayList prattay_presorted = new ArrayList<Integer>();
+    for (int i = 0; i < 20; i++){ prattay_presorted.add(i * 2); }
+    System.out.println("Pre-sorted case (" + prattay_presorted.size() + " elements): ");
+    System.out.println(prattay_presorted);
+    Sorts.selection(prattay_presorted);
+    System.out.println("Sorted prattay_presorted:");
+    System.out.println(prattay_presorted);
+
+    System.out.println(); //===============================
+
+    ArrayList prattay_descending = new ArrayList();
+    for (int i = 20; i > 0; i--){ prattay_descending.add(i * 2); }
+    System.out.println("Descending-ordered case (" + prattay_descending.size() + " elements): ");
+    System.out.println(prattay_descending);
+    Sorts.selection(prattay_descending);
+    System.out.println("Sorted prattay_descending:");
+    System.out.println(prattay_descending);
+
+    System.out.println(); //===============================
+
+    System.out.println("Testing Insertion Sort:");
+
+    ArrayList brian_avg = new ArrayList<Integer>();
+    brian_avg = populate(20, 1, 100);
+    System.out.println("Average case (" + brian_avg.size() + " elements): ");
+    System.out.println(brian_avg);
+    Sorts.insertion(brian_avg);
+    System.out.println("Sorted brian_avg:");
+    System.out.println(brian_avg);
+
+    System.out.println(); //===============================
+
+    ArrayList brian_best = new ArrayList<Integer>();
+    for (int i = 0; i < 20; i++){ brian_best.add(i * 2); }
+    System.out.println("Best case (" + brian_best.size() + " elements): ");
+    System.out.println(brian_best);
+    Sorts.insertion(brian_best);
+    System.out.println("Sorted brian_best:");
+    System.out.println(brian_best);
+
+    System.out.println(); //===============================
+
+    ArrayList brian_worst = new ArrayList();
+    for (int i = 20; i > 0; i--){ brian_worst.add(i * 2); }
+    System.out.println("Worst case (" + brian_worst.size() + " elements): ");
+    System.out.println(brian_worst);
+    Sorts.insertion(brian_worst);
+    System.out.println("Sorted brian_worst:");
+    System.out.println(brian_worst);
   }
 
 }

@@ -13,23 +13,34 @@ public class Sorts
   // postcondition: data's elements sorted in ascending order
   public static void bubble( ArrayList<Comparable> data )
   {
+    int totalPasses = 0;
+    int totalComparisons = 0;
+    int totalSwaps = 0;
+
     // outside for loop allowing for maximum traversal in ascending order
     // (a value at index 0 can move all the way to the largest index in the dataset)
-    for (int i = 0; i < data.size(); i++){
+    for (int pass = 0; pass < data.size() - 1; pass++){
 
       // from the last index, sorts until reaching index i in descending order
       // (because after pass 0, the value at index 0 will be correct.
       // it becomes pointless to search for a potential sort at that index again.)
-      for (int n = data.size() - 1; n > i; n--){
+      for (int n = data.size() - 1; n > pass; n--){
+        totalComparisons += 1;
 
         // if the value at index n is less than the value at index n-1, swap
         if ((data.get(n)).compareTo(data.get(n-1)) < 0){
           Comparable temp = data.get(n);
           data.set(n, data.get(n-1));
           data.set(n-1, temp);
+          totalSwaps += 1;
         }
       }
+      totalPasses += 1;
     }
+
+    System.out.println("total number of passes: \t" + totalPasses);
+    System.out.println("total number of comparisons: \t" + totalComparisons);
+    System.out.println("total number of swaps: \t\t" + totalSwaps);
   }
 
 
@@ -42,6 +53,9 @@ public class Sorts
 
     //maxPos will point to position of SELECTION (greatest value)
     int maxPos;
+    int totalPasses = 0;
+    int totalComparisons = 0;
+    int totalSwaps = 0;
 
     // iterates until pass is 0
     for(int pass = data.size() - 1; pass > 0; pass--) {
@@ -57,6 +71,7 @@ public class Sorts
         if ((data.get(maxPos)).compareTo(data.get(i)) < 0){
           maxPos = i;
         }
+        totalComparisons += 1;
 
         // System.out.println( "maxPos: " + maxPos );//diag
         // System.out.println( data );//diag
@@ -67,9 +82,15 @@ public class Sorts
       Comparable temp = data.get(pass);
       data.set(pass, data.get(maxPos));
       data.set(maxPos, temp);
+      totalSwaps += 1;
 
       // System.out.println( "after swap: " +  data );//diag
+      totalPasses += 1;
     }
+
+    System.out.println("total number of passes: \t" + totalPasses);
+    System.out.println("total number of comparisons: \t" + totalComparisons);
+    System.out.println("total number of swaps: \t\t" + totalSwaps);
   }//end selection
 
 
@@ -79,7 +100,11 @@ public class Sorts
   // postcondition: data's elements sorted in ascending order
   public static void insertion( ArrayList<Comparable> data )
   {
-    for(int partition = 0; partition < data.size(); partition++) {
+    int totalPasses = 0;
+    int totalComparisons = 0;
+    int totalSwaps = 0;
+
+    for(int partition = 1; partition < data.size(); partition++) {
       //partition marks first item in unsorted region
 
       // System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
@@ -93,6 +118,7 @@ public class Sorts
 
         // if index i < index i-1, swap
         if ((data.get(i)).compareTo(data.get(i-1)) < 0) {
+          totalComparisons += 1;
 
           // System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
 
@@ -100,12 +126,20 @@ public class Sorts
           Comparable temp = data.get(i);
           data.set(i, data.get(i-1));
           data.set(i-1, temp);
+          totalSwaps += 1;
 
         }
-        else
+        else{
+          totalComparisons += 1;
           break;
+        }
       }
+      totalPasses += 1;
     }
+
+    System.out.println("total number of passes: \t" + totalPasses);
+    System.out.println("total number of comparisons: \t" + totalComparisons);
+    System.out.println("total number of swaps: \t\t" + totalSwaps);
   }//end insertion
 
 
