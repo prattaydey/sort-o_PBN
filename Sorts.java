@@ -42,7 +42,7 @@ public class Sorts
     System.out.println("total number of comparisons: \t" + totalComparisons);
     System.out.println("total number of swaps: \t\t" + totalSwaps);
   }
-  
+
   // VOID version of bubbleSort WITH EXIT EARLY FUNCTIONALITY
   // Rearranges elements of input ArrayList
   // postcondition: data's elements sorted in ascending order
@@ -78,6 +78,11 @@ public class Sorts
         break;
       }
     }
+
+    System.out.println("total number of passes: \t" + totalPasses);
+    System.out.println("total number of comparisons: \t" + totalComparisons);
+    System.out.println("total number of swaps: \t\t" + totalSwaps);
+  }
 
 
   // VOID version of SelectionSort
