@@ -17,6 +17,8 @@ public class Sorts
     int totalComparisons = 0;
     int totalSwaps = 0;
 
+    boolean isSorted = true;
+
     // outside for loop allowing for maximum traversal in ascending order
     // (a value at index 0 can move all the way to the largest index in the dataset)
     for (int pass = 0; pass < data.size() - 1; pass++){
@@ -33,9 +35,13 @@ public class Sorts
           data.set(n, data.get(n-1));
           data.set(n-1, temp);
           totalSwaps += 1;
+          isSorted = false;
         }
       }
       totalPasses += 1;
+      if (isSorted == true){
+        break;
+      }
     }
 
     System.out.println("total number of passes: \t" + totalPasses);
