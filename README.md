@@ -24,7 +24,7 @@
 #### Worst Case: None
 - There is no best/worst case because selection sort only swaps once per pass, and there's always **n-1** passes. This is because we are individually moving each element to its correct position, regardless of its initial position.
 - Runtime complexity: O(n<sup>2</sup>)
-  - A runtime complexity of O(n<sup>2</sup>) results from the (n<sup>2</sup> + n)/2 - 1 comparisons made. These comparisons result from the traversal through all unsorted (that is, including elements not yet confirmed to be in their correct position) elements in the dataset each pass in order to find the index of the largest value in the dataset.
+  - A runtime complexity of O(n<sup>2</sup>) results from the **(n<sup>2</sup> + n)/2 - 1** comparisons made. These comparisons result from the traversal through all unsorted (that is, including elements not yet confirmed to be in their correct position) elements in the dataset each pass in order to find the index of the largest value in the dataset.
 
 ### Insertion Sort:
 #### Best Case: Ascending Order
