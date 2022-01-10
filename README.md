@@ -24,14 +24,16 @@
 #### Worst Case: None
 - There is no best/worst case because selection sort only swaps once per pass, and there's always **n-1** passes. This is because we are individually moving each element to its correct position, regardless of its initial position.
 - Runtime complexity: O(n<sup>2</sup>)
-  - A runtime complexity of O(n<sup>2</sup>) results from the (n<sup>2</sup> - n)/2 comparisons made. These comparisons result from the traversal through all unsorted (that is, including elements not yet confirmed to be in their correct position) elements in the dataset each pass in order to find the index of the largest value in the dataset.
+  - A runtime complexity of O(n<sup>2</sup>) results from the (n<sup>2</sup> + n)/2 comparisons made. These comparisons result from the traversal through all unsorted (that is, including elements not yet confirmed to be in their correct position) elements in the dataset each pass in order to find the index of the largest value in the dataset.
 
 ### Insertion Sort:
 #### Best Case: Ascending Order
 [1, 2, 3, 4, 5]
-- When a list with **n** elements is already sorted in ascending order, there are **n-1** passes with no swaps, since it is already sorted.
+- When a list with **n** elements is already sorted in ascending order, there are **n-1** passes with no swaps, since it is already sorted. There is exactly one comparison made per pass.
 - Runtime complexity: O(n)
+  - The runtime complexity is O(n) because further comparisons of one element to adjacent elements aren't made once that element no longer has to be "walked" to its correct position. In other words, there is a terminating condition that stops comparisons of an element to other elements when it is in the right position. Since all the elements are already in the right position when the dataset is in ascending order, the only comparisons being made are those that result in concluding that an element is in its correct position.
 #### Worst Case: Descending Order
 [5, 4, 3, 2, 1]
 - When the list is in descending order (opposite of what we want), then we have to make **n-1** passes with **(n<sup>2</sup> - n)/2** swaps. Each comparison results in a swap.
 - Runtime complexity: O(n<sup>2</sup>)
+  - The runtime complexity results from having to compare each unsorted element to all of its adjacent elements as it is "walked" to its correct place. 
