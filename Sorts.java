@@ -17,6 +17,41 @@ public class Sorts
     int totalComparisons = 0;
     int totalSwaps = 0;
 
+    // outside for loop allowing for maximum traversal in ascending order
+    // (a value at index 0 can move all the way to the largest index in the dataset)
+    for (int pass = 0; pass < data.size() - 1; pass++){
+
+      // from the last index, sorts until reaching index i in descending order
+      // (because after pass 0, the value at index 0 will be correct.
+      // it becomes pointless to search for a potential sort at that index again.)
+      for (int n = data.size() - 1; n > pass; n--){
+        totalComparisons += 1;
+
+        // if the value at index n is less than the value at index n-1, swap
+        if ((data.get(n)).compareTo(data.get(n-1)) < 0){
+          Comparable temp = data.get(n);
+          data.set(n, data.get(n-1));
+          data.set(n-1, temp);
+          totalSwaps += 1;
+        }
+      }
+      totalPasses += 1;
+    }
+
+    System.out.println("total number of passes: \t" + totalPasses);
+    System.out.println("total number of comparisons: \t" + totalComparisons);
+    System.out.println("total number of swaps: \t\t" + totalSwaps);
+  }
+  
+  // VOID version of bubbleSort WITH EXIT EARLY FUNCTIONALITY
+  // Rearranges elements of input ArrayList
+  // postcondition: data's elements sorted in ascending order
+  public static void bubble_ee( ArrayList<Comparable> data )
+  {
+    int totalPasses = 0;
+    int totalComparisons = 0;
+    int totalSwaps = 0;
+
     boolean isSorted = true;
 
     // outside for loop allowing for maximum traversal in ascending order
@@ -39,15 +74,10 @@ public class Sorts
         }
       }
       totalPasses += 1;
-      if (isSorted == true){
+      if (isSorted == true){ // if it is still sorted after the first pass, exit early
         break;
       }
     }
-
-    System.out.println("total number of passes: \t" + totalPasses);
-    System.out.println("total number of comparisons: \t" + totalComparisons);
-    System.out.println("total number of swaps: \t\t" + totalSwaps);
-  }
 
 
   // VOID version of SelectionSort
