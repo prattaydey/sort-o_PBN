@@ -56,10 +56,10 @@ public class Driver
     System.out.println(nafiz_best);
 
     System.out.println(); //===============================
-    
+
     ArrayList nafiz_best_ee = new ArrayList<Integer>();
     for (int i = 0; i < 20; i++){ nafiz_best_ee.add(i * 2); }
-    System.out.println("Best case (" + nafiz_best_ee.size() + " elements): ");
+    System.out.println("Best case with early exit (" + nafiz_best_ee.size() + " elements): ");
     System.out.println(nafiz_best_ee);
     Sorts.bubble_ee(nafiz_best_ee);
     System.out.println("Sorted nafiz_best_ee:");
