@@ -4,7 +4,7 @@
 // 2022-01-06
 // time spent: 0.6 hrs
 
-DISCO 
+DISCO
 - You can utilize counters to check for swaps, comparisons, and total passes.
 
 QCC
@@ -29,7 +29,7 @@ SEL-QA
  * q3: What does a pass boil down to?
  * a3: A pass boils down to searching for the index possessing the highest value
  *     and swapping that with the next available index from the right.
- 
+
 INS-QA
  * q0: How many passes to sort n elements?
  * a0: n-1 passes are needed to sort n elements.
@@ -43,3 +43,16 @@ INS-QA
  *     elements to the left of that partition.
  * q4: What must you track?
  * a4: The position of the partition.
+
+
+// 2022-01-06
+
+DISCO:
+- All three mentioned variables (swaps, passes, compareTos) should be measured
+to ensure helpful and relevant comparison.
+  - compareTos always occur between two numbers in a pass, but swaps don't
+  always happen, so it's good to record everything that occurs.
+- C refers to a constant that ensures function g(n) is bound to given function
+f(n) (that is, for every n, g(n) is greater than or equal to f(n)).
+- k refers to the minimum value of n where you start to observe this
+relationship between bound function g(n) and given function f(n).
